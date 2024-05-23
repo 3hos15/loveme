@@ -27,7 +27,7 @@ h1{
 }
 
 .knop {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
@@ -146,10 +146,6 @@ progress {
     padding: 0;
 }
 
-.love img {
-    width: 30em;
-}
-
 .game {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -165,6 +161,7 @@ progress {
 }
 
 #heartimg img {
+    width: 30em;
     max-width: 100%;
 }
 
@@ -182,13 +179,33 @@ progress {
 
 
 
-@media (max-width: 700px) {
+@media (max-width: 580px) {
 	body {
         height: 100vh;
     }
 
-    .love img {
-        width: 15em;
+    h1 {
+        font-size: 3em;
     }
+
+    .game {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 1em;
+        justify-items: center;
+    }
+
+    #btnsetone,
+    #btnsettwo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5em;
+    }
+
+    #heartimg {
+        margin-bottom: 1em;
+        width: 20em;
+    }
+
 }
 

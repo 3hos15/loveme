@@ -1,1 +1,52 @@
 /* <progress id="health" value="100" max="100"></progress> */
+
+// // let health = document.querySelector("#health") //Vraag get element by ID
+// // health.value -= 30;
+
+// // const btn = document.querySelector("button")
+
+// // let welcomeText = "Welcome to LOVE ME. With LOVE ME you can train your... loving skills! ";
+// // let aantalChar = 0;
+// // let typingSpeed = 100;
+// // let gameText = document.getElementById('typing-effect');
+
+// // function typeText() {
+// //     if (aantalChar < welcomeText.length) {
+// //         gameText.textContent += welcomeText.charAt(aantalChar);
+// //         aantalChar++;
+// //     } else {
+// //         clearInterval(typingInterval);
+// //     }
+// // }
+
+// // let typingInterval = setInterval(typeText, typingSpeed);
+
+// // btn.addEventListener("click", typeText)
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     let welcomeText = "Welcome to LOVE ME. With LOVE ME you can train your... loving skills! Click on the button (yes the big one down there) to start your loving journey :).";
+//     let aantalChar = 0;
+//     let typingSpeed = 100;
+//     let gameText = document.querySelector('#starttekst');
+
+//     function typeText() {
+//         if (aantalChar < welcomeText.length) {
+//             gameText.textContent += welcomeText.charAt(aantalChar);
+//             aantalChar++;
+//         } else {
+//             clearInterval(typingInterval);
+//         }
+//     }
+
+//     let typingInterval = setInterval(typeText, typingSpeed);
+
+//     // Start the typing effect immediately after the page loads
+//     typeText();
+// });
+
+
+// if() {
+
+// } else() {
+
+// }
