@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="love" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,9 +16,34 @@
 </head>
 
 <body>
-    <h1>Love Me</h1>
+    <section>
+        <h1>Love Me</h1>
+        <details>
+            <summary>&#x2765; Instructions</summary>
+            <p>Hier komt een kleine instructie van de game te staan</p>
+        </details>
+    </section>
+    <section id="heartprogress" >
+        <progress id="health" value="50" max="100"></progress>
+        <p>50%</p>
+    </section>
+
+    <section class="game">
+        <section id="btnsetone">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+        </section>
+        <section id="heartimg">
+            <img src="images/heartone.png" alt="">
+        </section>
+        <section id="btnsettwo">
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+        </section>
+    </section>
     <p>tekst</p>
-    <button>Click here</button>
     <script src="script.js"></script>
 </body>
 </html>
