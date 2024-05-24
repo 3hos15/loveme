@@ -6,10 +6,7 @@
     <title>Love Me</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" href="images/pixel_heart.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Danfo&display=swap" rel="stylesheet">
-
+ 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Danfo&family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -24,26 +21,26 @@
         </details>
     </section>
     <section id="heartprogress" >
-        <progress id="health" value="50" max="100"></progress>
-        <p>50%</p>
+        <progress id="health" value="0" max="100"></progress>
+        <p id="heartpercent">0%</p>
     </section>
 
     <section class="game">
         <section id="btnsetone">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
+            <button id="ily">I love you</button>
+            <button id="ydg">You're doing great</button>
+            <button id="ihy">I hate you</button>
         </section>
         <section id="heartimg">
-            <img src="images/heartone.png" alt="">
+            <img id="heart" src="images/heartone.png" alt="image of heart">
         </section>
         <section id="btnsettwo">
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
+            <button id="yllt">You look lovely today</button>
+            <button id="yru">You're ugly</button>
+            <button id="bts">Beautifull smile</button>
         </section>
     </section>
-    <p>tekst</p>
+    <p id="endtext">Do you know how to love?</p>
     <script src="script.js"></script>
 </body>
 </html>

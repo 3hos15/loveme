@@ -16,6 +16,10 @@ section {
     text-align: center;
 }
 
+#endtext {
+    text-align: center;
+}
+
 h1{
     font-family: "Danfo";
     font-family: "Press Start 2P", system-ui;
@@ -206,6 +210,10 @@ progress {
         margin-bottom: 1em;
         width: 20em;
     }
+
+    #heartpercent, #endtext {
+        font-size: 0.85em;
+        }
 
 }
 

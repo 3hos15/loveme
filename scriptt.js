@@ -36,7 +36,7 @@ let progressBar = document.querySelector('#health');
 let progressPercent = document.querySelector('#heartpercent');
 let heartImg = document.querySelector('#heart');
 
-let buttons = document.querySelectorAll('button');
+let buttons = document.querySelectorAll('button'); //selecteerd alle buttons uit de html
 
 let currentImageIndex = 0;
 
@@ -52,28 +52,29 @@ const heartImages = [
     'heartnine.png',
     'heartten.png',
     'hearteleven.png'
-]; //namen van de bestanden van de fotos die gebruikt worden
+];
 
 const buttonEffects = {
-    "ily": 10, // i love you
-    "ydg": 10, // you're doing great
-    "ihy": -10, // i hate you 
-    "yllt": 10, // you look lovely today 
-    "yru": -10, // you're ugly 
-    "bts": 10 // beautiful smile
-}; //past een berekening van -10 of +10 toe als er of de button met genoemde ID wordt gedrukt
+    "ily": 10, // i love you - nice
+    "ydg": 10, // you're doing great - nice
+    "ihy": -10, // i hate you - not nice
+    "yllt": 10, // you look lovely today - nice
+    "yru": -10, // you're ugly - not nice
+    "bts": 10 // beautiful smile - nice
+};
 
 function handleButtonClick(event) {
-    const buttonId = event.target.id; //zoekt voor de ID van de geklikte button
-    const effect = buttonEffects[buttonId]; // past de effect toe van de code hierboven
+    const buttonId = event.target.id;
+    const effect = buttonEffects[buttonId];
 
     // Calculate new value for the progress bar
-    let newValue = parseInt(progressBar.value) + effect; //parseInt veranderd de string naar een nummer
+    let newValue = parseInt(progressBar.value) + effect;
     if (newValue > 100) newValue = 100;
     if (newValue < 0) newValue = 0;
 
-    progressBar.value = newValue; 
-    progressPercent.textContent = newValue + '%'; // Update de progress bar
+    // Update the progress bar and percentage text
+    progressBar.value = newValue;
+    progressPercent.textContent = newValue + '%';
 
     // Determine the appropriate image to display
     if (newValue > 0) {
