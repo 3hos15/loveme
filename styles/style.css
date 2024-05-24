@@ -96,9 +96,9 @@ details summary {
     cursor: pointer;
 }
 
-/* details summary::-webkit-details-marker {
+details summary::-webkit-details-marker {
     display: none;
-} */
+}
 
 details summary:hover {
     scale: 1.05;
@@ -168,16 +168,6 @@ progress {
     width: 30em;
     max-width: 100%;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
