@@ -83,13 +83,14 @@ function handleButtonClick(event) {
     progressBar.value = newValue; 
     progressPercent.textContent = newValue + '%'; // Update de progress bar
 
-    // Determine the appropriate image to display
+    // zoekt de goede foto om te laten zien
     if (newValue > 0) {
         if (effect > 0) {
-            // Increase the heart image index if a positive button is pressed
+            // hart foto wordt gevuld als er een positieve knopt wordt gedrukt
             currentImageIndex = (currentImageIndex + 1) % heartImages.length;
         } else if (effect < 0) {
-            // Decrease the heart image index if a negative button is pressed
+            // hart foto minder gevuld als er een negatieve knopt wordt gedrukt
+            // de index van de foto's gaat hierbij omhoog of omlaag, de fotos zijn gerangschikt van leeg naar vol
             if (currentImageIndex > 0) {
                 currentImageIndex--;
             }
@@ -111,13 +112,12 @@ function handleButtonClick(event) {
         }, 1000); //reset alles wanneer de progress bar 100% bereikt
     }
 }
+
 buttons.forEach(button => {
     button.addEventListener('click', handleButtonClick);
 });
 
-// ilyBtn.addEventListener('click', handleButtonClick);
-// ydgBtn.addEventListener('click', handleButtonClick);
-// ihyBtn.addEventListener('click', handleButtonClick);
-// ylltBtn.addEventListener('click', handleButtonClick);
-// yruBtn.addEventListener('click', handleButtonClick);
-// btsBtn.addEventListener('click', handleButtonClick);
+
+// buttons.forEach(function(button) {
+//     button.addEventListener('click', handleButtonClick);
+// });
