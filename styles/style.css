@@ -20,14 +20,14 @@ section {
     text-align: center;
 }
 
-h1{
+h1, #terug{
     font-family: "Danfo";
     font-family: "Press Start 2P", system-ui;
     color: rgb(208, 32, 82);
     font-size: 5em;
     text-align: center;
     margin: 0;
-    text-shadow: black;
+
 }
 
 .knop {
@@ -35,6 +35,8 @@ h1{
     justify-content: center;
     align-items: center;
 }
+
+
 
 .home p {
     display: flex;
@@ -94,7 +96,7 @@ button:hover {
     display: grid;
 }
 
-.love p, .home p, summary {
+.love p, .home p, summary, #bron {
     font-family: "Press Start 2P", system-ui;
 }
 
@@ -122,7 +124,7 @@ details summary:hover {
     scale: 1.05;
 }
 
-details p {
+details p, bron {
     font-size: 0.6em;
 }
 
@@ -145,10 +147,10 @@ progress::-webkit-progress-value {
     border-radius: 0.625em; /* Same as above for smooth transition of progress value */
 }
 
-/* progress::-moz-progress-bar {
-    background-color: #4CAF50;
+progress::-moz-progress-bar {
+    background-color: #bc3761;
     border-radius: 10px; 
-} */
+}
 
 #heartprogress {
     margin-top: 1em;
@@ -188,12 +190,23 @@ progress {
 }
 
 
+#bron, #terug {
+    text-align: center;
+    font-size: 0.5em;
+    text-decoration: none;
+    color: rgb(208, 32, 82);
+}
+
+#bron:hover {
+    scale: 1.1;
+}
+
 @media (max-width: 580px) {
 	body {
         height: 100vh;
     }
 
-    h1 {
+    h1, #terug {
         font-size: 3em;
     }
 
