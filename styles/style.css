@@ -65,11 +65,29 @@ h1{
 
 }
 
-.home a:hover {
+button {
+    color: white;
+    padding: 0.5em;
+    background-color: rgb(208, 32, 82);
+    font-family: "Press Start 2P", system-ui;
+    box-shadow: 
+    inset -2px 2px 1px 1px grey,
+    inset -2px -2px 1px 1px rgb(52, 52, 52),
+    inset 2px 2px 1px 1px lightgrey;
+
+    font-size: 0.7em;
+}
+
+
+
+.home a:hover, button:hover {
     background-color: rgb(238, 128, 159);
     scale: 1.1;
 }
-
+button:hover {
+    background-color: rgb(238, 128, 159);
+    scale: 1.05;
+}
 
 .love body {
     background-color: white;
