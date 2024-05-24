@@ -3,7 +3,11 @@ console.log("Love Me");
 
 // DOMContentloaded laat de funtie beginnen als de website volledig is geladen.
 document.addEventListener('DOMContentLoaded', function() {
-    let welcomeText = "Welcome to LOVE ME. With LOVE ME you can train your... loving skills! Click on the button (yes the big one down there) to start your loving journey :).";
+    let typingSound = new Audio('../audio/typing_sound.mp3'); // Create an Audio object with the sound file path
+    typingSound.loop = true; // Set loop property to true
+    typingSound.play(); // Play the sound
+
+    let welcomeText = "Welcome to LOVE ME. With LOVE ME you can train your... loving skills! Click on the button (it will appear in a sec) to start your loving journey :).";
     let aantalChar = 0; // hoeveel characters er te zien zijn
     let typingSpeed = 100; // snelheid van de characters die worden getypt
     let gameText = document.querySelector('#starttekst'); //element waar de tekst komt
@@ -20,7 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // aantalChar = aantalChar + 1; voegt per 1 characters toe
         } else {
             clearInterval(typingInterval); // als alle characters te zien zijn stopt het typen
+
             gameLink.style.display = 'flex'; // de link wordt van display:none naar display:flex veranderd zodat de link te zien is
+            typingSound.pause();
             console.log("You can continue to the game!");
         }
     }
@@ -29,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     typeText(); // voert de funtie direct uit
 });
+
+
 
 
 
@@ -86,22 +94,21 @@ function handleButtonClick(event) {
                 currentImageIndex--;
             }
         }
-        // Update the heart image based on the current index
+        // Update het hart
         heartImg.src = `images/${heartImages[currentImageIndex]}`;
     } else {
-        // If progress is zero, reset to the first image
         heartImg.src = 'images/heartone.png';
-        currentImageIndex = 0;
+        currentImageIndex = 0; //leeg hart als procent 0
     }
 
-    // Reset everything if progress bar reaches 100%
+    
     if (newValue === 100) {
         setTimeout(() => {
             progressBar.value = 0;
             progressPercent.textContent = '0%';
             heartImg.src = 'images/heartone.png';
             currentImageIndex = 0;
-        }, 1000);
+        }, 1000); //reset alles wanneer de progress bar 100% bereikt
     }
 }
 buttons.forEach(button => {
