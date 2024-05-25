@@ -147,14 +147,14 @@
 
 console.log("Love Me");
 
-let homePage = document.querySelector('.home');
+const homePage = document.querySelector('.home');
 
 if (homePage) {
     let typingSound = new Audio('../audio/typing_sound.mp3');
     typingSound.loop = true; 
     typingSound.play(); 
 
-    let welcomeText = "Welcome to LOVE ME. With LOVE ME you can train your... loving skills! Click on the button to start your loving journey :).";
+    let welcomeText = "Welcome to LOVE ME! With LOVE ME you can train your... loving skills! Enter your name and press start to activate your loving journey :).";
     let aantalChar = 0; // hoeveel characters er te zien zijn
     let typingSpeed = 60;
     let gameText = document.querySelector('#starttekst');
@@ -183,7 +183,7 @@ if (homePage) {
 }
 
 function callMe(){
-    var name = document.getElementById('tbName').value;
+    let name = document.getElementById('tbName').value;
     sessionStorage.setItem('userName', name);
 }
 
@@ -253,7 +253,7 @@ function handleButtonClick(event) {
     updateHeartImage(effect);
 
     if (newValue === 100) {
-        celebrateCompletion();
+        fullHeart();
     }
 
     startInactivityTimer(); // Restart the inactivity timer after action
@@ -263,9 +263,11 @@ function updateHeartImage(effect) {
     if (progressBar.value > 0) {
         if (effect > 0) {
             currentImageIndex = Math.min(currentImageIndex + 1, heartImages.length - 1);
+            console.log('Thats nice!')
             clickSound.play();
         } else if (effect < 0) {
             currentImageIndex = Math.max(currentImageIndex - 1, 0);
+            console.log('Thats mean!')
             clickSound.play();
         }
 
@@ -276,7 +278,7 @@ function updateHeartImage(effect) {
     }
 }
 
-function celebrateCompletion() {
+function fullHeart() {
     setTimeout(() => {
         progressBar.value = 0;
         progressPercent.textContent = '0%';

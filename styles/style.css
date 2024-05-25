@@ -121,6 +121,7 @@ button:hover {
 details {
     margin-top: 1em;
     text-align: center;
+
 }
 
 details summary {
@@ -140,6 +141,12 @@ details summary:hover {
 
 details p, bron {
     font-size: 0.6em;
+
+}
+details p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
 }
 
 progress {
@@ -266,6 +273,11 @@ footer a {
     .love button {
         font-size: 0.75em;
     }
+
+    details p {
+        width: 90%;
+    }
+
     #btnsetone,
     #btnsettwo {
         display: grid;
