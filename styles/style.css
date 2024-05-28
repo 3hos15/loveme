@@ -202,14 +202,14 @@ progress::-moz-progress-bar {
     max-width: 100%;
 }
 
-#bron, #terug {
+#bron, #startpage, #gamepage {
     text-align: center;
     font-size: 0.5em;
     text-decoration: none;
     color: rgb(208, 32, 82);
 }
 
-#terug {
+#startpage, #gamepage {
     display: flex;
     font-size: 1em;
     text-align: center;
@@ -244,7 +244,7 @@ progress::-moz-progress-bar {
     color: rgb(208, 32, 82);
 }
 
-#terug:hover {
+#startpage:hover, #gamepage:hover {
     color: black;
 }
 
