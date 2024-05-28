@@ -31,8 +31,6 @@ if (homePage) {
     typeText();
 }
 
-
-
 // https://stackoverflow.com/questions/35329180/localstorage-save-name-through-form-show-on-other-page
 function callMe() {
     let name = document.getElementById('tbName').value;
@@ -93,7 +91,7 @@ function handleButtonClick(event) {
     const buttonId = event.target.id;
     const effect = buttonEffects[buttonId];
 
-    let newValue = parseInt(progressBar.value) + effect; // Converts the string to a number
+    let newValue = parseInt(progressBar.value) + effect;
     if (newValue > 100) newValue = 100;
     if (newValue < 0) newValue = 0;
 
@@ -120,7 +118,6 @@ function updateHeartImage(effect) {
             console.log('Thats mean!');
             clickSound.play();
         }
-
         heartImg.src = `images/${heartImages[currentImageIndex]}`;
     } else {
         heartImg.src = 'images/heartone.png';
@@ -146,12 +143,12 @@ function fullHeart() {
 
 function startInactivityTimer() {
     inactivityTimer = setTimeout(() => {
-        decreaseProgressGradually();
+        decreaseProgress();
     }, 5000);
     loveme.textContent = "Do you know how to love, " + sessionStorage.getItem('userName') + "?";
 }
 
-function decreaseProgressGradually() {
+function decreaseProgress() {
     decreaseInterval = setInterval(() => {
         if (currentImageIndex > 0) {
             currentImageIndex--;
