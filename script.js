@@ -51,13 +51,13 @@ let decreaseInterval;
 
 let loveme = document.querySelector('#endtext');
 
-let sparkleSound = new Audio('../audio/sparkle_sound.mp3');
+const sparkleSound = new Audio('../audio/sparkle_sound.mp3');
 sparkleSound.loop = false;
 
-let clickSound = new Audio('../audio/click_sound.mp3');
+const clickSound = new Audio('../audio/click_sound.mp3');
 clickSound.loop = false;
 
-let clockSound = new Audio('../audio/ticking_clock.mp3');
+const clockSound = new Audio('../audio/ticking_clock.mp3');
 clockSound.loop = false;
 
 const heartImages = [
