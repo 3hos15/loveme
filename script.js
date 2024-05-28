@@ -8,7 +8,7 @@ if (homePage) {
     typingSound.play();
 
     let welcomeText = "Welcome to LOVE ME! With LOVE ME you can train your... loving skills! Enter your name and press start to activate your loving journey :).";
-    let aantalChar = 0; // hoeveel characters er te zien zijn
+    let numChar = 0; // hoeveel characters er te zien zijn
     let typingSpeed = 60;
     let gameText = document.querySelector('#starttekst');
     let gameLink = document.querySelector('.knop');
@@ -16,9 +16,9 @@ if (homePage) {
 
     // checkt of er nog tekens over zijn om te typen door aantalChat te vergelijken met de lengte van welcomeText
     function typeText() {
-        if (aantalChar < welcomeText.length) {
-            gameText.textContent += welcomeText.charAt(aantalChar);
-            aantalChar++;
+        if (numChar < welcomeText.length) {
+            gameText.textContent += welcomeText.charAt(numChar);
+            numChar++;
         } else {
             clearInterval(typingInterval);
             gameLink.style.display = 'flex';
@@ -32,12 +32,12 @@ if (homePage) {
 }
 
 // https://stackoverflow.com/questions/35329180/localstorage-save-name-through-form-show-on-other-page
-function callMe() {
-    let name = document.getElementById('tbName').value;
+function saveName() {
+    let name = document.querySelector('#tbName').value;
     sessionStorage.setItem('userName', name);
 }
 
-document.getElementById('endtext').innerText = "Do you know how to love, " + sessionStorage.getItem('userName') + "?";
+document.querySelector('#endtext').innerText = "Do you know how to love, " + sessionStorage.getItem('userName') + "?";
 
 let progressBar = document.querySelector('#health');
 let progressPercent = document.querySelector('#heartpercent');
@@ -45,7 +45,7 @@ let heartImg = document.querySelector('#heart');
 
 let buttons = document.querySelectorAll('button');
 
-let currentImageIndex = 0;
+let currentHeartPic = 0;
 let inactivityTimer;
 let decreaseInterval;
 
@@ -83,7 +83,7 @@ const buttonEffects = {
     "bts": 10 // beautiful smile
 };
 
-function handleButtonClick(event) {
+function buttonClick(event) {
     clearTimeout(inactivityTimer);
     clearInterval(decreaseInterval);
     clockSound.pause();
@@ -103,25 +103,25 @@ function handleButtonClick(event) {
     if (newValue === 100) {
         fullHeart();
     } else {
-        startInactivityTimer(); 
+        timerInactivity(); 
     }
 }
 
 function updateHeartImage(effect) {
     if (progressBar.value > 0) {
         if (effect > 0) {
-            currentImageIndex = Math.min(currentImageIndex + 1, heartImages.length - 1);
+            currentHeartPic = Math.min(currentHeartPic + 1, heartImages.length - 1);
             console.log('Thats nice!');
             clickSound.play();
         } else if (effect < 0) {
-            currentImageIndex = Math.max(currentImageIndex - 1, 0);
+            currentHeartPic = Math.max(currentHeartPic - 1, 0);
             console.log('Thats mean!');
             clickSound.play();
         }
-        heartImg.src = `images/${heartImages[currentImageIndex]}`;
+        heartImg.src = `images/${heartImages[currentHeartPic]}`;
     } else {
         heartImg.src = 'images/heartone.png';
-        currentImageIndex = 0;
+        currentHeartPic = 0;
     }
 }
 
@@ -133,15 +133,15 @@ function fullHeart() {
             progressBar.value = 0;
             progressPercent.textContent = '0%';
             heartImg.src = 'images/heartone.png';
-            currentImageIndex = 0;
+            currentHeartPic = 0;
             loveme.textContent = "Do you know how to love, " + sessionStorage.getItem('userName') + "?";
-            startInactivityTimer();
+            timerInactivity();
         }, 1000);
     }, 1000);
     console.log('The game will restart!');
 }
 
-function startInactivityTimer() {
+function timerInactivity() {
     inactivityTimer = setTimeout(() => {
         decreaseProgress();
     }, 5000);
@@ -150,11 +150,11 @@ function startInactivityTimer() {
 
 function decreaseProgress() {
     decreaseInterval = setInterval(() => {
-        if (currentImageIndex > 0) {
-            currentImageIndex--;
+        if (currentHeartPic > 0) {
+            currentHeartPic--;
             progressBar.value -= 10;
             progressPercent.textContent = progressBar.value + '%';
-            heartImg.src = `images/${heartImages[currentImageIndex]}`;
+            heartImg.src = `images/${heartImages[currentHeartPic]}`;
             loveme.textContent = "No love anymore " + sessionStorage.getItem('userName') + "?";
             clockSound.play();
         } else {
@@ -165,7 +165,7 @@ function decreaseProgress() {
 }
 
 buttons.forEach(button => {
-    button.addEventListener('click', handleButtonClick);
+    button.addEventListener('click', buttonClick);
 });
 
-startInactivityTimer();
+timerInactivity();
