@@ -16,13 +16,11 @@ body {
     place-items: center;
 }
 
-
 h1, #terug{
     color: rgb(208, 32, 82);
     font-size: 5em;
     text-align: center;
     margin: 0;
-
 }
 
 .knop {
@@ -30,8 +28,6 @@ h1, #terug{
     justify-content: center;
     align-items: center;
 }
-
-
 
 .home p {
     display: flex;
@@ -45,7 +41,6 @@ h1, #terug{
     margin-right: auto;
     margin-top: 5em;
     margin-bottom: 4em;
-
 }
 
 .home a {
@@ -59,7 +54,6 @@ h1, #terug{
     inset -2px 2px 1px 1px grey,
     inset -2px -2px 1px 1px rgb(52, 52, 52),
     inset 2px 2px 1px 1px lightgrey;
-
 }
 
 section {
@@ -87,14 +81,12 @@ button {
     font-size: 1em;
 }
 
-
 input {
     font-family: "Press Start 2P", system-ui;
     padding: 1.25em;
     width: 10em;
     background-color: rgba(255, 255, 255, 0.673);
 }
-
 
 .home a:hover, button:hover {
     background-color: rgb(238, 128, 159);
@@ -121,7 +113,6 @@ button:hover {
 details {
     margin-top: 1em;
     text-align: center;
-
 }
 
 details summary {
@@ -130,7 +121,7 @@ details summary {
     list-style: none;
     cursor: pointer;
 }
-
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/WebKit_Extensions */
 details summary::-webkit-details-marker {
     display: none;
 }
@@ -183,17 +174,11 @@ progress::-moz-progress-bar {
     align-items: baseline;
     justify-content: center;
     margin-top: 1em;
-
 }
 
 #heartpercent {
     margin: 1em;
 }
-
-/* #heartprogress p {
-    margin: 0;
-    padding: 0;
-} */
 
 .game {
     display: grid;
@@ -214,9 +199,6 @@ progress::-moz-progress-bar {
     max-width: 100%;
 }
 
-
-
-
 #bron, #terug {
     text-align: center;
     font-size: 0.5em;
@@ -230,30 +212,44 @@ progress::-moz-progress-bar {
     text-align: center;
     align-items: center;
     align-self: center;
-
 }
 
 #bron:hover {
     scale: 1.1;
 }
 
+#beatingheart {
+    width: 5em;
+}
+
+.bronnen main {
+    padding: 1em;
+}
+
+.bronnen li {
+    padding: 0.5em;
+    list-style: none;
+    text-align: center;
+}
+
+.bronnen a {
+    color: black;
+    text-decoration: none;
+}
+
+.bronnen a:hover {
+    color: rgb(208, 32, 82);
+}
+
+#terug:hover {
+    color: black;
+}
 
 footer {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-footer a {
-    font-size: 5em;
-}
-
-#beatingheart {
-    width: 5em;
-
-}
-
-
 
 @media (max-width: 580px) {
 	body {
@@ -270,6 +266,7 @@ footer a {
         gap: 1em;
         justify-items: center;
     }
+
     .love button {
         font-size: 0.75em;
     }
@@ -299,4 +296,3 @@ footer a {
         }
 
 }
-
