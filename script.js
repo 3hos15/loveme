@@ -14,7 +14,7 @@ if (homePage) {
     let gameLink = document.querySelector('.knop');
 
 
-    // checkt of er nog tekens over zijn om te typen door aantalChat te vergelijken met de lengte van welcomeText
+    // checkt of er nog tekens over zijn om te typen door numChar te vergelijken met de lengte van welcomeText
     function typeText() {
         if (numChar < welcomeText.length) {
             gameText.textContent += welcomeText.charAt(numChar);
